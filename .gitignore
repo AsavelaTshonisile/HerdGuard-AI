@@ -1,0 +1,36 @@
+# HerdGuard AI - Git Ignore
+node_modules/
+.vite/
+dist/
+dist-ssr/
+*.local
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+backend/venv/
+backend/.venv/
+venv/
+ENV/
+env/
+*.sqlite
+*.sqlite3
+*.db
+backend/app/herdguard.db
+backend/tests/test_herdguard.db
+
+# Environment variables
+.env
+.env.production
+.env.local
+
+# IDE & OS
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
