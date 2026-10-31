@@ -19,21 +19,27 @@ import DisclaimerBanner from '../../components/DisclaimerBanner';
 export default function LandingPage() {
   return (
     <div className="flex-1 flex flex-col">
-      {/* Hero Section */}
-      <section className="relative overflow-hidden bg-gradient-to-b from-forest-900 via-forest-800 to-forest-900 text-white pt-16 pb-24 px-4 sm:px-6 lg:px-8">
-        <div className="absolute inset-0 opacity-10 bg-[radial-gradient(#52B788_1px,transparent_1px)] [background-size:16px_16px]"></div>
+      {/* Hero Section with Cattle Pasture Background */}
+      <section className="relative overflow-hidden text-white pt-20 pb-28 px-4 sm:px-6 lg:px-8">
+        {/* Background Image Layer */}
+        <div 
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat transform scale-105"
+          style={{ backgroundImage: `url('/cattle-hero.jpg')` }}
+        />
+        {/* Semi-transparent Dark Forest / Charcoal Overlay for high legibility */}
+        <div className="absolute inset-0 bg-gradient-to-b from-forest-950/90 via-forest-900/80 to-forest-950/95 backdrop-blur-[1px]"></div>
         
         <div className="max-w-5xl mx-auto text-center relative z-10">
-          <div className="inline-flex items-center space-x-2 px-3 py-1.5 rounded-full bg-forest-700/60 border border-forest-500/40 text-forest-200 text-xs font-semibold mb-6 shadow-inner">
+          <div className="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-forest-800/80 border border-forest-500/40 text-forest-200 text-xs font-semibold mb-6 shadow-md backdrop-blur-sm">
             <span className="w-2 h-2 rounded-full bg-forest-400 animate-pulse"></span>
             <span>Empowering South African Livestock Farmers & Veterinary Networks</span>
           </div>
 
-          <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight">
+          <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight drop-shadow-sm">
             Protecting South Africa’s Cattle with <span className="text-forest-300">Intelligent Health Intelligence</span>
           </h1>
 
-          <p className="mt-6 text-base sm:text-xl text-forest-100/90 max-w-3xl mx-auto leading-relaxed">
+          <p className="mt-6 text-base sm:text-xl text-forest-100/95 max-w-3xl mx-auto leading-relaxed drop-shadow-sm">
             HerdGuard AI helps smallholder, communal, and commercial farmers maintain digital animal health records,
             detect unusual symptoms early through AI-assisted risk awareness, track vaccinations, and coordinate with local veterinary professionals.
           </p>
@@ -41,7 +47,7 @@ export default function LandingPage() {
           <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
             <Link
               to="/register"
-              className="w-full sm:w-auto px-6 py-3.5 rounded-xl bg-forest-500 hover:bg-forest-400 text-forest-950 font-bold text-sm transition shadow-lg flex items-center justify-center space-x-2"
+              className="w-full sm:w-auto px-7 py-3.5 rounded-xl bg-forest-500 hover:bg-forest-400 text-forest-950 font-bold text-sm transition shadow-xl flex items-center justify-center space-x-2"
             >
               <span>Register Your Farm</span>
               <ArrowRight className="w-4 h-4" />
@@ -49,19 +55,10 @@ export default function LandingPage() {
 
             <Link
               to="/login"
-              className="w-full sm:w-auto px-6 py-3.5 rounded-xl bg-white/10 hover:bg-white/20 border border-white/20 text-white font-semibold text-sm transition flex items-center justify-center space-x-2"
+              className="w-full sm:w-auto px-7 py-3.5 rounded-xl bg-white/15 hover:bg-white/25 border border-white/25 text-white font-semibold text-sm transition shadow-lg flex items-center justify-center space-x-2 backdrop-blur-sm"
             >
-              <span>Sign In with Demo Accounts</span>
+              <span>Sign In to Portal</span>
             </Link>
-          </div>
-
-          {/* Quick Credential Hint Banner */}
-          <div className="mt-8 max-w-xl mx-auto p-3 rounded-xl bg-forest-800/80 border border-forest-600/50 text-xs text-forest-200 flex items-center justify-around">
-            <span>Demo Farmer: <strong className="text-white">farmer@herdguard.co.za</strong></span>
-            <span>•</span>
-            <span>Demo Vet: <strong className="text-white">vet@herdguard.co.za</strong></span>
-            <span>•</span>
-            <span>Password: <strong className="text-white">Password123!</strong></span>
           </div>
         </div>
       </section>
