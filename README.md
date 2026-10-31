@@ -195,9 +195,28 @@ cd HerdGuardAI
 
 ---
 
-## 6. Running Automated Tests
+## 6. Access Control & Built-in Credentials
 
-A comprehensive automated test suite is implemented using **Pytest**, covering authentication, role-based authorization restrictions, farm and cattle CRUD, duplicate ear tag enforcement, AI risk assessment execution, veterinary review workflows, vaccination lifecycle, and dashboard analytics.
+HerdGuard AI enforces strict biosecurity and veterinary credential governance:
+- **Farmers**: Can register via public self-signup at `/register`.
+- **Veterinary Professionals**: **Cannot self-register**. Due to statutory verification and veterinary board integrity, veterinarians must be **provisioned exclusively by the platform Administrator**, who assigns their initial login credentials.
+- **System Administrator**: Guaranteed automatically by the backend on database initialization.
+
+### Built-in & Provisioned Credentials
+
+| Role | Email | Password | Provisioning Method | Access Portal |
+|---|---|---|---|---|
+| **System Administrator** | `admin@herdguard.co.za` | `Password123!` | Automatic (Built-in on startup) | `/admin` |
+| **Veterinary Professional** | `vet@herdguard.co.za` | `Password123!` | Provisioned by Admin | `/professional` |
+| **Livestock Farmer** | `farmer@herdguard.co.za` | `Password123!` | Public Self-Signup or Seed | `/dashboard` |
+
+> **Admin Vet Provisioning Workflow**: The Administrator navigates to `/admin/users` and clicks **"+ Add Veterinary Professional"**. The admin enters the veterinarian's name, email, official practice/directorate, province, and assigns their initial password (or generates a secure one). The credentials can be copied with one click and provided to the veterinarian to sign in at `/login`.
+
+---
+
+## 7. Running Automated Tests
+
+A comprehensive automated test suite is implemented using **Pytest**, covering authentication, role-based authorization restrictions, farm and cattle CRUD, duplicate ear tag enforcement, AI risk assessment execution, veterinary review workflows, vaccination lifecycle, dashboard analytics, and admin vet provisioning with credential assignment.
 
 Run the test suite from the `backend/` directory:
 
@@ -206,38 +225,43 @@ cd backend
 .\venv\Scripts\python -m pytest -v
 ```
 
-### Test Suite Summary
+### Test Suite Summary (22 Passing Tests)
 ```
-tests/test_auth.py::test_register_user PASSED                            [  5%]
-tests/test_auth.py::test_register_duplicate_email PASSED                 [ 11%]
-tests/test_auth.py::test_login_success PASSED                            [ 16%]
-tests/test_auth.py::test_login_invalid_password PASSED                   [ 22%]
-tests/test_auth.py::test_get_current_user_me PASSED                      [ 27%]
-tests/test_authorization_dashboard.py::test_role_authorization_restrictions PASSED [ 33%]
-tests/test_authorization_dashboard.py::test_farmer_dashboard_statistics PASSED [ 38%]
-tests/test_authorization_dashboard.py::test_professional_dashboard_statistics PASSED [ 44%]
-tests/test_authorization_dashboard.py::test_admin_dashboard_statistics PASSED [ 50%]
-tests/test_farms_animals.py::test_create_and_get_farm PASSED             [ 55%]
-tests/test_farms_animals.py::test_animal_registration_and_duplicate_check PASSED [ 61%]
-tests/test_farms_animals.py::test_animal_profile_and_filters PASSED      [ 66%]
-tests/test_health_and_ai.py::test_submit_health_report_with_ai_assessment PASSED [ 72%]
-tests/test_health_and_ai.py::test_professional_review_report PASSED      [ 77%]
-tests/test_health_and_ai.py::test_standalone_ai_health_assessment PASSED [ 83%]
-tests/test_health_and_ai.py::test_ai_agricultural_assistant_rag PASSED   [ 88%]
-tests/test_vaccinations_incidents.py::test_vaccination_lifecycle PASSED  [ 94%]
+tests/test_auth.py::test_register_user PASSED                            [  4%]
+tests/test_auth.py::test_register_duplicate_email PASSED                 [  9%]
+tests/test_auth.py::test_login_success PASSED                            [ 13%]
+tests/test_auth.py::test_login_invalid_password PASSED                   [ 18%]
+tests/test_auth.py::test_get_current_user_me PASSED                      [ 22%]
+tests/test_auth.py::test_public_registration_rejects_professional_role PASSED [ 27%]
+tests/test_auth.py::test_builtin_admin_login PASSED                      [ 31%]
+tests/test_auth.py::test_admin_provision_vet_and_vet_login PASSED        [ 36%]
+tests/test_auth.py::test_farmer_cannot_provision_vet PASSED              [ 40%]
+tests/test_authorization_dashboard.py::test_role_authorization_restrictions PASSED [ 45%]
+tests/test_authorization_dashboard.py::test_farmer_dashboard_statistics PASSED [ 50%]
+tests/test_authorization_dashboard.py::test_professional_dashboard_statistics PASSED [ 54%]
+tests/test_authorization_dashboard.py::test_admin_dashboard_statistics PASSED [ 59%]
+tests/test_farms_animals.py::test_create_and_get_farm PASSED             [ 63%]
+tests/test_farms_animals.py::test_animal_registration_and_duplicate_check PASSED [ 68%]
+tests/test_farms_animals.py::test_animal_profile_and_filters PASSED      [ 72%]
+tests/test_health_and_ai.py::test_submit_health_report_with_ai_assessment PASSED [ 77%]
+tests/test_health_and_ai.py::test_professional_review_report PASSED      [ 81%]
+tests/test_health_and_ai.py::test_standalone_ai_health_assessment PASSED [ 86%]
+tests/test_health_and_ai.py::test_ai_agricultural_assistant_rag PASSED   [ 90%]
+tests/test_vaccinations_incidents.py::test_vaccination_lifecycle PASSED  [ 95%]
 tests/test_vaccinations_incidents.py::test_disease_incident_and_map_endpoint PASSED [100%]
 
-======================= 18 passed in 4.81s =======================
+======================= 22 passed in 8.78s =======================
 ```
 
 ---
 
-## 7. Core Application Modules
+## 8. Core Application Modules
 
 ### Module 1: Authentication & User Management
 - Secure registration and login with bcrypt password hashing and 24-hour JWT tokens.
 - Strict Role-Based Access Control (`farmer`, `professional`, `admin`).
-- User profile updates and password reset capabilities.
+- Admin-only provisioning of veterinary professionals with assigned passwords.
+- User profile updates and status activation/deactivation controls.
 
 ### Module 2: Real-Time Farmer Dashboard
 - Live database queries computing total livestock, healthy cattle, animals requiring attention, and active reports.

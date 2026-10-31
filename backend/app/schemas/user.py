@@ -13,6 +13,14 @@ class UserBase(BaseModel):
 class UserCreate(UserBase):
     password: str = Field(min_length=6)
 
+class VetProvisionRequest(BaseModel):
+    email: EmailStr
+    password: str = Field(min_length=6, description="Admin-assigned initial password for the veterinary professional")
+    full_name: str
+    phone_number: Optional[str] = None
+    organization_or_practice: Optional[str] = None
+    province: Optional[str] = None
+
 class UserUpdate(BaseModel):
     full_name: Optional[str] = None
     phone_number: Optional[str] = None
@@ -27,8 +35,7 @@ class UserOut(UserBase):
     created_at: datetime
     updated_at: datetime
 
-    class Config:
-        from_attributes = True
+    model_config = {"from_attributes": True}
 
 class LoginRequest(BaseModel):
     email: EmailStr

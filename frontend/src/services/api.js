@@ -100,6 +100,7 @@ export const usersAPI = {
   getAll: (params) => api.get('/users', { params }),
   getById: (id) => api.get(`/users/${id}`),
   update: (id, data) => api.put(`/users/${id}`, data),
+  createProfessional: (data) => api.post('/users/professional', data),
 };
 
 export const knowledgeAPI = {

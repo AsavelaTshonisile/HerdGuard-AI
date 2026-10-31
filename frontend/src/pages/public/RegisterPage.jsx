@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useAuth } from '../../context/AuthContext';
-import { ShieldCheck, User, Mail, Lock, Phone, MapPin, Building, ArrowRight } from 'lucide-react';
+import { ShieldCheck, User, Mail, Lock, Phone, MapPin, Building, ArrowRight, Stethoscope } from 'lucide-react';
 
 const SA_PROVINCES = [
   'Eastern Cape',
@@ -67,6 +67,15 @@ export default function RegisterPage() {
           <p className="mt-1 text-xs text-charcoal-muted">
             Join South Africa’s digital livestock health & disease monitoring platform
           </p>
+        </div>
+
+        {/* Veterinary Notice Callout */}
+        <div className="p-3.5 rounded-2xl bg-blue-50/80 border border-blue-200/70 text-xs text-blue-900 flex items-start space-x-2.5">
+          <Stethoscope className="w-4 h-4 text-blue-700 flex-shrink-0 mt-0.5" />
+          <div className="text-[11px] leading-relaxed">
+            <span className="font-bold text-blue-950 block">Are you a Veterinarian or Extension Officer?</span>
+            Veterinary accounts cannot be self-registered. Credentials must be assigned directly by a HerdGuard system administrator. Please contact your platform administrator for provisioned access.
+          </div>
         </div>
 
         {error && (

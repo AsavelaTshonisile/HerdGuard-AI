@@ -13,6 +13,13 @@ router = APIRouter(prefix="/auth", tags=["Authentication"])
 
 @router.post("/register", response_model=Token, status_code=status.HTTP_201_CREATED)
 def register(user_in: UserCreate, db: Session = Depends(get_db)):
+    # Restrict public self-registration strictly to farmers
+    if user_in.role != "farmer":
+        raise HTTPException(
+            status_code=status.HTTP_400_BAD_REQUEST,
+            detail="Public registration is strictly reserved for farmers. Veterinary professionals and administrators must be provisioned directly by a system administrator."
+        )
+
     # Check if user already exists
     existing_user = db.query(User).filter(User.email == user_in.email.lower()).first()
     if existing_user:
@@ -27,7 +34,7 @@ def register(user_in: UserCreate, db: Session = Depends(get_db)):
         hashed_password=hashed_pw,
         full_name=user_in.full_name,
         phone_number=user_in.phone_number,
-        role=user_in.role,
+        role="farmer",  # strictly enforce farmer role for self-registration
         organization_or_practice=user_in.organization_or_practice,
         province=user_in.province,
         is_active=True

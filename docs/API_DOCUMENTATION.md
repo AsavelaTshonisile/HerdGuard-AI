@@ -98,3 +98,15 @@ All API routes are prefixed under `/api`. Interactive OpenAPI / Swagger UI docum
 | `/api/knowledge-resources` | `GET` | Public / Auth | Browse verified DALRRD & ARC guidelines |
 | `/api/knowledge-resources` | `POST` | Professional / Admin | Add new verified knowledge document |
 | `/api/activity-logs` | `GET` | Admin | Retrieve immutable platform event audit logs |
+
+---
+
+## 10. User & Veterinary Account Provisioning (`/api/users`)
+
+| Endpoint | Method | Role | Description |
+|---|---|---|---|
+| `/api/users` | `GET` | Admin | List all registered and provisioned accounts |
+| `/api/users/{user_id}` | `GET` | Owner / Admin | Retrieve individual user profile |
+| `/api/users/{user_id}` | `PUT` | Owner / Admin | Update user details or activate/deactivate account |
+| `/api/users/professional` | `POST` | Admin | Provision veterinary professional account with admin-assigned credentials |
+

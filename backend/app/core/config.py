@@ -13,6 +13,9 @@ class Settings(BaseSettings):
     CORS_ORIGINS: str = "http://localhost:5173,http://127.0.0.1:5173,http://localhost:3000"
     AI_PROVIDER: str = "local"
     OPENAI_API_KEY: str = ""
+    DEFAULT_ADMIN_EMAIL: str = "admin@herdguard.co.za"
+    DEFAULT_ADMIN_PASSWORD: str = "Password123!"
+    DEFAULT_ADMIN_NAME: str = "System Administrator (HerdGuard AI)"
 
     model_config = SettingsConfigDict(
         env_file=os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(__file__))), ".env"),

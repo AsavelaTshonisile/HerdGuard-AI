@@ -46,7 +46,16 @@ def setup_test_db():
         province="Gauteng",
         is_active=True
     )
-    db.add_all([farmer, vet, admin])
+    from app.core.config import settings
+    builtin_admin = User(
+        email=settings.DEFAULT_ADMIN_EMAIL.lower(),
+        hashed_password=get_password_hash(settings.DEFAULT_ADMIN_PASSWORD),
+        full_name=settings.DEFAULT_ADMIN_NAME,
+        role="admin",
+        province="Gauteng",
+        is_active=True
+    )
+    db.add_all([farmer, vet, admin, builtin_admin])
     db.commit()
     db.close()
     yield
