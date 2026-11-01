@@ -1,184 +1,156 @@
 # 🐄 HerdGuard AI 🇿🇦
 
-### Intelligent Livestock Health Monitoring, Disease-Risk Awareness & Agricultural Intelligence Platform
+### Intelligent Livestock Health Monitoring, Disease-Risk Awareness & Agricultural Intelligence
 
-**HerdGuard AI** is a full-stack digital platform designed to support livestock farmers in South Africa through animal health monitoring, disease-risk awareness, digital livestock records and agricultural intelligence.
+<p align="center">
+  <strong>Supporting smarter livestock management and agricultural intelligence in South Africa.</strong>
+</p>
 
-The platform initially focuses on cattle, with the potential to expand to sheep and goats. It aims to connect smallholder, communal and commercial farmers with agricultural professionals through accessible digital tools.
-
----
-
-## 📋 Table of Contents
-
-1. [Project Overview](#-project-overview)
-2. [The Problem](#-the-problem)
-3. [The Solution](#-the-solution)
-4. [Key Features](#-key-features)
-5. [User Roles](#-user-roles)
-6. [Technology Stack](#-technology-stack)
-7. [AI and Intelligent Features](#-ai-and-intelligent-features)
-8. [Getting Started](#-getting-started)
-9. [API Documentation](#-api-documentation)
-10. [Testing](#-testing)
-11. [Regulatory Alignment](#-regulatory-alignment)
-12. [Disclaimer](#-disclaimer)
+<p align="center">
+  <img src="https://img.shields.io/badge/PROJECT-Agricultural%20Technology-2E7D32?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/FOCUS-Livestock%20Health-795548?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/COUNTRY-South%20Africa-1565C0?style=for-the-badge" />
+</p>
 
 ---
 
-## 🌍 Project Overview
+## 🌍 About the Project
 
-Livestock farming plays an important role in South Africa's agricultural economy and food security. However, farmers can experience challenges identifying early signs of animal diseases, maintaining accurate livestock records and accessing reliable agricultural information.
+**HerdGuard AI** is a full-stack digital livestock health monitoring and agricultural intelligence platform developed to support South African farmers.
 
-HerdGuard AI aims to address these challenges by providing a centralized digital platform where farmers can:
+The platform initially focuses on cattle, with the potential to expand to sheep and goats. It aims to improve livestock management by combining digital animal records, health reporting, preliminary AI-assisted disease-risk assessments and accessible agricultural information.
 
-- Register and manage their livestock.
-- Maintain digital animal health records.
-- Report unusual symptoms and health concerns.
-- Receive preliminary AI-assisted disease-risk assessments.
-- Monitor vaccination records.
-- View reported disease incidents geographically.
-- Access agricultural information through an intelligent assistant.
+Designed with communal, smallholder and commercial farming environments in mind, HerdGuard AI aims to make livestock health information and digital management tools more accessible.
 
-The project is designed with South African farming conditions in mind, particularly the needs of smallholder and communal livestock farmers.
+## 🎯 The Problem
 
-## ⚠️ The Problem
+Livestock farming plays an important role in South Africa's agricultural economy and food security. However, farmers face several challenges:
 
-Livestock farmers face several challenges that can affect animal health, productivity and food security.
-
-**1. Delayed Disease Awareness**
-
-Unusual symptoms may go unnoticed or unreported, increasing the risk of disease transmission within and between livestock populations.
-
-**2. Limited Digital Record-Keeping**
-
-Some farmers rely on paper-based records, making it difficult to maintain accessible animal histories, identification details and vaccination information.
-
-**3. Limited Access to Agricultural Information**
-
-Farmers may struggle to access understandable and reliable information about livestock diseases, prevention and animal health management.
-
-**4. Disease Monitoring and Communication**
-
-The absence of accessible digital reporting and monitoring tools can make it difficult to identify patterns in reported livestock health concerns.
+- **Delayed disease awareness:** Unusual symptoms may go unnoticed or be reported too late.
+- **Limited digital records:** Paper-based records can make livestock histories and vaccination information difficult to manage.
+- **Information accessibility:** Farmers may struggle to find reliable and understandable livestock health information.
+- **Disease monitoring:** Limited digital reporting tools can make it difficult to identify patterns in reported animal health concerns.
 
 ## 💡 The Solution
 
-HerdGuard AI provides an integrated livestock management and health-monitoring platform.
+HerdGuard AI provides a centralized platform that helps farmers manage livestock information, report health concerns and access agricultural knowledge.
 
-It combines digital livestock records, symptom reporting, preliminary disease-risk assessment, geographical incident monitoring and agricultural knowledge retrieval.
+The platform brings together:
 
-The goal is to improve access to useful information, encourage timely reporting and support better-informed livestock management decisions.
+- Digital livestock and farm management.
+- Animal health reporting and monitoring.
+- Preliminary AI-assisted disease-risk assessment.
+- Vaccination record management.
+- Geographical disease incident visualization.
+- An intelligent agricultural knowledge assistant.
+- Role-based access for farmers, professionals and administrators.
 
-## 🚀 Key Features
+## 🚀 Core Features
 
 | Feature | Description |
 |---|---|
-| User Authentication | Secure registration, login and role-based access. |
-| Farm Management | Register farms and manage farm information and locations. |
-| Livestock Management | Register cattle using identification details such as ear-tag numbers. |
-| Health Reporting | Submit animal health reports and observed symptoms. |
-| AI-Assisted Risk Assessment | Generate preliminary health-risk assessments from reported symptoms. |
-| Vaccination Tracking | Record and monitor livestock vaccination information. |
-| Disease Incident Mapping | Display reported livestock health incidents geographically. |
-| Agricultural AI Assistant | Retrieve relevant information from a curated agricultural knowledge base. |
-| Notifications | Provide relevant updates about reports and platform activities. |
-| Administrative Dashboard | Support platform administration, user management and report oversight. |
+| 👤 User Authentication | Secure account access and role-based permissions. |
+| 🌾 Farm Management | Register farms and maintain farm information and locations. |
+| 🐄 Livestock Management | Register cattle and maintain identification records. |
+| 🩺 Health Reporting | Submit animal symptoms and health concerns. |
+| 🤖 AI Risk Assessment | Generate preliminary health-risk assessments based on reported symptoms. |
+| 💉 Vaccination Tracking | Maintain livestock vaccination information. |
+| 🗺️ Disease Incident Mapping | Visualize reported livestock health incidents geographically. |
+| 💬 Agricultural AI Assistant | Retrieve relevant information from a curated agricultural knowledge base. |
+| 🔔 Notifications | Receive relevant platform updates. |
+| 📊 Administration | Manage users, oversee reports and monitor platform activity. |
 
 ## 👥 User Roles
 
-HerdGuard AI supports different user roles with distinct responsibilities.
-
-**Farmer**
-- Manage farm information.
-- Register and manage livestock.
-- Submit animal health reports.
+### 🧑‍🌾 Farmer
+- Manage farms and livestock.
+- Register individual animals.
+- Submit health reports.
 - View preliminary risk assessments.
 - Maintain vaccination records.
 - Access agricultural information.
 
-**Veterinary / Agricultural Professional**
-- Access assigned or authorized health reports.
+### 🩺 Veterinary / Agricultural Professional
+- Access authorized health reports.
 - Review reported animal health concerns.
 - Provide professional feedback where authorized.
 - Support responsible livestock health monitoring.
 
-**Administrator**
-- Manage platform users and access permissions.
-- Oversee reported incidents.
-- Manage platform information and resources.
+### 🛡️ Administrator
+- Manage users and permissions.
+- Oversee submitted reports and incidents.
+- Manage platform resources.
 - Monitor administrative activities.
 
-## 🛠️ Technology Stack
+## 🧠 AI & Intelligent Features
 
-### Frontend
-- React.js
-- Vite
-- JavaScript
-- Tailwind CSS
-- React Router
-- Axios
-- Recharts
-- Leaflet / React Leaflet
-- Lucide React
+HerdGuard AI incorporates two intelligent components.
 
-### Backend
-- Python
-- FastAPI
-- SQLAlchemy
-- Pydantic
-- PyJWT
-- bcrypt
-- Uvicorn
+### 1. Preliminary Disease-Risk Assessment
 
-### Database
-- SQLite
-- SQLAlchemy ORM
+The platform uses a rule-based assessment approach to evaluate submitted symptoms and identify potential livestock health concerns.
 
-### AI and Data Processing
-- Scikit-learn
-- TF-IDF Vectorization
-- Cosine Similarity
-- Rule-based symptom and disease-risk assessment
+Its initial disease knowledge scope includes:
 
-### Testing
-- Pytest
+- Foot-and-Mouth Disease (FMD).
+- Lumpy Skin Disease.
+- African Redwater.
+- Blackquarter.
+- Bovine Respiratory Disease Complex.
 
-## 🤖 AI and Intelligent Features
+The assessment provides preliminary risk information to support awareness and reporting. It is not a veterinary diagnosis.
 
-HerdGuard AI incorporates two main intelligent components.
+### 2. Agricultural Knowledge Assistant
 
-**1. Preliminary Disease-Risk Assessment**
+The intelligent assistant uses information retrieval techniques to help users find relevant livestock health and agricultural information.
 
-The platform uses a rule-based approach to evaluate submitted symptoms and identify potential livestock health concerns.
+Its retrieval approach includes:
 
-The initial knowledge scope includes conditions such as:
-
-- Foot-and-Mouth Disease (FMD)
-- Lumpy Skin Disease
-- African Redwater
-- Blackquarter
-- Bovine Respiratory Disease Complex
-
-The assessment provides preliminary risk information to support awareness and reporting. It does not establish a veterinary diagnosis.
-
-**2. Agricultural Knowledge Assistant**
-
-The platform uses information retrieval techniques to help users access relevant agricultural and livestock health information.
-
-The retrieval process uses:
 - TF-IDF vectorization.
 - Cosine similarity.
 - A curated agricultural knowledge base.
 
-The intention is to make relevant agricultural information easier for farmers to find and understand.
+This approach helps retrieve relevant information based on the user's query.
+
+## 🧰 Technology & Development
+
+The following logos represent the main technologies and development ecosystem used in this project.
+
+<p align="center">
+  <img src="https://skillicons.dev/icons?i=react,vite,js,tailwind,python,fastapi,sqlite,git,github&perline=9" alt="Technology logos" />
+</p>
+
+<p align="center">
+  <sub>Frontend • Backend • Database • Development & Version Control</sub>
+</p>
+
+## 🏗️ Application Architecture
+
+HerdGuard AI follows a frontend-backend architecture.
+
+```mermaid
+flowchart TD
+    A[Farmer / Professional / Admin] --> B[Web Application]
+    B --> C[Backend API]
+    C --> D[Authentication & Authorization]
+    C --> E[Application Services]
+    E --> F[Livestock & Farm Management]
+    E --> G[Health Reporting]
+    E --> H[AI Risk Assessment]
+    E --> I[Agricultural Knowledge Retrieval]
+    E --> J[Vaccination & Incident Management]
+    F --> K[(Database)]
+    G --> K
+    H --> K
+    I --> K
+    J --> K
+```
 
 ## 💻 Getting Started
 
-Follow these steps to run the project locally.
-
 ### Prerequisites
 
-Make sure you have installed:
+Ensure that you have the following installed:
 
 - Python
 - Node.js and npm
@@ -187,14 +159,11 @@ Make sure you have installed:
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/YOUR-USERNAME/HerdGuard-AI.git
-```
-
-```bash
+git clone https://github.com/AsavelaTshonisile/HerdGuard-AI.git
 cd HerdGuard-AI
 ```
 
-### 2. Set Up the Backend
+### 2. Backend Setup
 
 Navigate to the backend directory:
 
@@ -208,27 +177,27 @@ Create a virtual environment:
 python -m venv venv
 ```
 
-Activate it on Windows:
+Activate the environment on Windows:
 
 ```powershell
 venv\Scripts\activate
 ```
 
-Install the dependencies:
+Install dependencies:
 
 ```bash
 pip install -r requirements.txt
 ```
 
-Configure the environment variables using the project's `.env.example` file, if provided.
+Configure the environment variables using `.env.example`, if provided.
 
-Start the backend:
+Start the backend server:
 
 ```bash
 uvicorn app.main:app --reload
 ```
 
-### 3. Set Up the Frontend
+### 3. Frontend Setup
 
 Open another terminal and navigate to the frontend directory:
 
@@ -236,31 +205,31 @@ Open another terminal and navigate to the frontend directory:
 cd frontend
 ```
 
-Install the dependencies:
+Install dependencies:
 
 ```bash
 npm install
 ```
 
-Start the development server:
+Start the frontend:
 
 ```bash
 npm run dev
 ```
 
-**Note:** Confirm the directory names, entry point and commands against the actual project structure before publishing this setup guide.
+> **Note:** Confirm the folder names, backend entry point and commands against the actual project structure before publishing this guide.
 
 ## 📚 API Documentation
 
-HerdGuard AI uses FastAPI to provide backend API services.
+Interactive API documentation is available through the backend when the application is running:
 
-When the backend is running, the interactive Swagger documentation is normally available at:
+**Swagger UI**
 
 ```text
 http://127.0.0.1:8000/docs
 ```
 
-The alternative ReDoc documentation is normally available at:
+**ReDoc**
 
 ```text
 http://127.0.0.1:8000/redoc
@@ -268,7 +237,7 @@ http://127.0.0.1:8000/redoc
 
 ## 🧪 Testing
 
-The backend uses Pytest for automated testing.
+Automated backend tests are managed using Pytest.
 
 Run the tests from the backend directory:
 
@@ -276,57 +245,51 @@ Run the tests from the backend directory:
 pytest
 ```
 
-Tests should be run before making claims about the project's test coverage or passing test count.
+## 🇿🇦 South African Agricultural Context
 
-## 🇿🇦 Regulatory Alignment
+HerdGuard AI is designed around livestock health monitoring and agricultural information needs within South Africa.
 
-HerdGuard AI is designed with South African livestock health and agricultural reporting considerations in mind.
+The platform aims to complement existing agricultural and veterinary reporting processes. It does not replace official government reporting systems, state veterinary services or registered veterinary professionals.
 
-The platform aims to complement existing agricultural and veterinary reporting processes, not replace official government systems or qualified veterinary professionals.
+Suspected disease incidents must be distinguished from professionally reviewed reports and officially confirmed outbreaks.
 
-Reported disease concerns should be handled responsibly, and suspected outbreaks must not be presented as officially confirmed without appropriate verification from the relevant authority.
+## 🔮 Future Development
 
-## ⚕️ Disclaimer
+Potential enhancements include:
 
-HerdGuard AI is an agricultural information and livestock health-monitoring platform.
-
-Its AI-assisted assessments are preliminary and are not substitutes for professional veterinary diagnosis, treatment or advice.
-
-Farmers should contact a qualified veterinary professional or the relevant state veterinary authority when they observe concerning symptoms or suspect a notifiable animal disease.
-
-The platform does not independently confirm disease outbreaks or authorize veterinary treatment.
-
----
-
-## 🔮 Future Enhancements
-
-Potential future improvements include:
-
-- Support for sheep and goat livestock records.
-- Mobile-friendly and offline reporting capabilities.
-- Multilingual support for South African farmers.
-- Improved geographical disease-monitoring capabilities.
-- Integration with verified agricultural and veterinary information sources.
-- Additional livestock analytics and reporting tools.
+- 🐑 Expanded support for sheep and goats.
+- 📱 Improved mobile and offline functionality.
+- 🌍 Multilingual support for South African farmers.
+- 📍 Enhanced geographical disease monitoring.
+- 🔗 Integration with verified agricultural information sources.
+- 📈 Advanced livestock analytics and reporting.
 
 ## 🤝 Contributing
 
 Contributions, suggestions and feedback are welcome.
 
-If you would like to contribute:
-
 1. Fork the repository.
-2. Create a new feature branch.
-3. Make your changes.
+2. Create a feature branch.
+3. Implement your changes.
 4. Test your changes.
 5. Submit a pull request.
 
+## ⚕️ Disclaimer
+
+HerdGuard AI provides agricultural information and preliminary livestock health-risk assessments. Its assessments are not substitutes for professional veterinary diagnosis, treatment or advice.
+
+Farmers should contact a qualified veterinary professional or the relevant state veterinary authority when they observe concerning symptoms or suspect a notifiable animal disease.
+
+The platform does not independently confirm disease outbreaks or authorize veterinary treatment.
+
 ## 📄 License
 
-This project is intended to be distributed under the MIT License.
-
-Add a `LICENSE` file containing the MIT License before publishing this claim as an active project license.
+This project is intended to use the MIT License. Refer to the repository's `LICENSE` file once it has been added.
 
 ---
 
-**HerdGuard AI 🇿🇦 — Supporting smarter livestock management and agricultural intelligence in South Africa.**
+<p align="center">
+  <strong>🐄 HerdGuard AI 🇿🇦</strong>
+  <br />
+  Building smarter approaches to livestock health monitoring and agricultural intelligence.
+</p>
