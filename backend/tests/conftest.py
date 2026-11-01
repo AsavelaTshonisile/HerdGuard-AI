@@ -8,20 +8,20 @@ from app.database.session import get_db as session_get_db
 from app.core.security import create_access_token, get_password_hash
 from app.models.user import User
 
-# In-memory or temporary SQLite database for testing
-TEST_DATABASE_URL = "sqlite:///./tests/test_herdguard.db"
+# In-memory SQLite for fast, isolated tests (no file I/O, no lock contention)
+TEST_DATABASE_URL = "sqlite:///:memory:"
 
 engine = create_engine(TEST_DATABASE_URL, connect_args={"check_same_thread": False})
 TestingSessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 
 @pytest.fixture(scope="session", autouse=True)
 def setup_test_db():
-    Base.metadata.drop_all(bind=engine)
     Base.metadata.create_all(bind=engine)
     db = TestingSessionLocal()
     
-    # Create test users
-    pw = get_password_hash("TestPass123!")
+    # Use low bcrypt rounds (4) for fast test execution — production uses 12
+    TEST_ROUNDS = 4
+    pw = get_password_hash("TestPass123!", rounds=TEST_ROUNDS)
     farmer = User(
         email="test_farmer@example.com",
         hashed_password=pw,
@@ -49,7 +49,7 @@ def setup_test_db():
     from app.core.config import settings
     builtin_admin = User(
         email=settings.DEFAULT_ADMIN_EMAIL.lower(),
-        hashed_password=get_password_hash(settings.DEFAULT_ADMIN_PASSWORD),
+        hashed_password=get_password_hash(settings.DEFAULT_ADMIN_PASSWORD, rounds=TEST_ROUNDS),
         full_name=settings.DEFAULT_ADMIN_NAME,
         role="admin",
         province="Gauteng",

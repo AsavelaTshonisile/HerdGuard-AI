@@ -1,13 +1,18 @@
 import bcrypt
 import jwt
+import os
 from datetime import datetime, timedelta, timezone
 from typing import Any, Union, Optional
 from app.core.config import settings
 
-def get_password_hash(password: str) -> str:
+# Allow test environments to use a lower bcrypt cost factor for speed.
+# In production this defaults to 12 (strong). Tests set BCRYPT_ROUNDS=4.
+_BCRYPT_ROUNDS = int(os.environ.get("BCRYPT_ROUNDS", "12"))
+
+def get_password_hash(password: str, rounds: int = _BCRYPT_ROUNDS) -> str:
     # Truncate to 72 bytes as per bcrypt specification
     pwd_bytes = password.encode('utf-8')[:72]
-    salt = bcrypt.gensalt(rounds=12)
+    salt = bcrypt.gensalt(rounds=rounds)
     return bcrypt.hashpw(pwd_bytes, salt).decode('utf-8')
 
 def verify_password(plain_password: str, hashed_password: str) -> bool:
